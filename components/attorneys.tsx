@@ -1,10 +1,9 @@
-import Image from "next/image"
+import { User } from "lucide-react"
 
 const attorneys = [
   {
     name: "Richard E. Brandwein",
     title: "Partner, Attorney & CPA",
-    image: "/images/attorney-hartwell.jpg",
     education: [
       "Roosevelt University, Graduated 1962",
       "John Marshall Law School, Graduated 1966",
@@ -22,7 +21,6 @@ const attorneys = [
   {
     name: "Michael W. Brandwein",
     title: "Partner, Attorney",
-    image: "/images/attorney-prescott.jpg",
     education: [
       "University of Iowa, 1992, B.S. in Business",
       "Chicago-Kent School of Law, Graduated 1996",
@@ -64,14 +62,12 @@ export function Attorneys() {
               className="overflow-hidden rounded-sm border border-primary-foreground/10 bg-primary-foreground/5"
             >
               <div className="flex flex-col md:flex-row">
-                {/* Image */}
-                <div className="relative h-72 w-full shrink-0 md:h-auto md:w-56">
-                  <Image
-                    src={attorney.image || "/placeholder.svg"}
-                    alt={`Portrait of ${attorney.name}`}
-                    fill
-                    className="object-cover object-top"
-                  />
+                {/* Photo placeholder */}
+                <div className="flex h-72 w-full shrink-0 items-center justify-center bg-primary-foreground/10 md:h-auto md:w-56">
+                  <div className="flex flex-col items-center gap-2">
+                    <User className="h-16 w-16 text-primary-foreground/30" aria-hidden="true" />
+                    <span className="text-xs text-primary-foreground/30">Photo</span>
+                  </div>
                 </div>
 
                 {/* Info */}
