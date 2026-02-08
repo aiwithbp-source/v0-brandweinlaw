@@ -2,18 +2,37 @@ import Image from "next/image"
 
 const attorneys = [
   {
-    name: "James R. Hartwell, Esq.",
-    title: "Managing Partner & CPA",
+    name: "Richard E. Brandwein",
+    title: "Partner, Attorney & CPA",
     image: "/images/attorney-hartwell.jpg",
-    credentials: ["J.D., Columbia Law School", "CPA, New York State", "LL.M. in Taxation, NYU"],
-    bio: "With over 35 years of experience, James brings a rare combination of legal and accounting expertise to estate planning. He has structured trusts and estate plans protecting more than $2 billion in family assets. James is a Fellow of the American College of Trust and Estate Counsel (ACTEC).",
+    education: [
+      "Roosevelt University, Graduated 1962",
+      "John Marshall Law School, Graduated 1966",
+      "Illinois Attorney",
+      "Certified Public Accountant",
+    ],
+    professional: [
+      "Member, Chicago Bar Association",
+      "Member, American Bar Association",
+      "Admitted, U.S. Tax Court",
+      "Partner, Brandwein & Brandwein",
+    ],
+    bio: "Internal Revenue Agent (Income/Estate Tax) from 1962 to 1966. Since 1967, in private practice concentrated in estate planning, succession planning for business owners, IRS controversies, probate matters, commercial transactions and real estate transactions.",
   },
   {
-    name: "William T. Prescott, Esq.",
-    title: "Senior Partner",
+    name: "Michael W. Brandwein",
+    title: "Partner, Attorney",
     image: "/images/attorney-prescott.jpg",
-    credentials: ["J.D., Georgetown Law", "LL.M. in Estate Planning, University of Miami", "Board Certified, Estate Planning & Probate"],
-    bio: "William is recognized as one of the foremost authorities on trust litigation and complex estate administration. He regularly advises high-net-worth families on multi-generational wealth transfer strategies and has been named to the Best Lawyers in America list for 12 consecutive years.",
+    education: [
+      "University of Iowa, 1992, B.S. in Business",
+      "Chicago-Kent School of Law, Graduated 1996",
+    ],
+    professional: [
+      "Member, Chicago Bar Association",
+      "Member, American Bar Association",
+      "Partner, Brandwein & Brandwein",
+    ],
+    bio: "In private practice concentrated in estate planning, succession planning for business owners, IRS controversies, probate matters, commercial transactions and real estate transactions.",
   },
 ]
 
@@ -31,8 +50,9 @@ export function Attorneys() {
           </h2>
           <div className="mx-auto mb-6 h-px w-16 bg-accent" />
           <p className="text-base leading-relaxed text-primary-foreground/70 text-pretty">
-            Two distinguished professionals whose combined expertise in law and
-            accounting delivers unparalleled estate planning counsel.
+            We strive to maintain the trust we build with each client by combining
+            our experience, expertise, and innovative solutions to achieve results
+            that exceed client expectations.
           </p>
         </div>
 
@@ -63,16 +83,37 @@ export function Attorneys() {
                     {attorney.title}
                   </p>
 
-                  <ul className="mt-4 flex flex-col gap-1">
-                    {attorney.credentials.map((cred) => (
-                      <li
-                        key={cred}
-                        className="text-xs text-primary-foreground/60"
-                      >
-                        {cred}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="mt-4">
+                    <p className="mb-1.5 text-xs font-semibold tracking-wide text-primary-foreground/50 uppercase">
+                      Education
+                    </p>
+                    <ul className="flex flex-col gap-1">
+                      {attorney.education.map((item) => (
+                        <li
+                          key={item}
+                          className="text-xs text-primary-foreground/60"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-3">
+                    <p className="mb-1.5 text-xs font-semibold tracking-wide text-primary-foreground/50 uppercase">
+                      Professional
+                    </p>
+                    <ul className="flex flex-col gap-1">
+                      {attorney.professional.map((item) => (
+                        <li
+                          key={item}
+                          className="text-xs text-primary-foreground/60"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
                   <p className="mt-4 text-sm leading-relaxed text-primary-foreground/70">
                     {attorney.bio}

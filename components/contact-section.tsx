@@ -1,17 +1,14 @@
 "use client"
 
 import React from "react"
-
 import { useState } from "react"
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react"
 
 export function ContactSection() {
   const [formState, setFormState] = useState({
-    firstName: "",
-    lastName: "",
+    name: "",
     email: "",
     phone: "",
-    service: "",
     message: "",
   })
   const [submitted, setSubmitted] = useState(false)
@@ -36,12 +33,12 @@ export function ContactSection() {
             Get in Touch
           </p>
           <h2 className="mb-4 font-serif text-3xl font-bold text-foreground md:text-4xl lg:text-5xl text-balance">
-            Schedule a Consultation
+            Contact Us
           </h2>
           <div className="mx-auto mb-6 h-px w-16 bg-accent" />
           <p className="text-base leading-relaxed text-muted-foreground text-pretty">
             Every great estate plan begins with a conversation. Reach out to
-            discuss how we can protect your legacy.
+            discuss how we can help you achieve your goals.
           </p>
         </div>
 
@@ -58,9 +55,9 @@ export function ContactSection() {
                     Our Office
                   </h3>
                   <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                    420 Park Avenue, Suite 1800
+                    1707 Shermer Rd, Suite 126
                     <br />
-                    New York, NY 10022
+                    Northbrook, IL 60062
                   </p>
                 </div>
               </div>
@@ -74,7 +71,13 @@ export function ContactSection() {
                     Phone
                   </h3>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    (212) 555-0140
+                    Phone:{" "}
+                    <a href="tel:8475099200" className="text-accent hover:underline">
+                      (847) 509-9200
+                    </a>
+                  </p>
+                  <p className="mt-0.5 text-sm text-muted-foreground">
+                    Fax: (847) 509-9207
                   </p>
                 </div>
               </div>
@@ -88,7 +91,7 @@ export function ContactSection() {
                     Email
                   </h3>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    inquiries@hartwellprescott.com
+                    Contact us using the form below
                   </p>
                 </div>
               </div>
@@ -102,14 +105,26 @@ export function ContactSection() {
                     Office Hours
                   </h3>
                   <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                    Monday - Friday: 8:30 AM - 6:00 PM
+                    Monday - Friday: 9:00 AM - 5:00 PM
                     <br />
-                    Saturday: By Appointment
-                    <br />
-                    Sunday: Closed
+                    Saturday & Sunday: Closed
                   </p>
                 </div>
               </div>
+            </div>
+
+            {/* Map embed */}
+            <div className="mt-8 overflow-hidden rounded-sm border border-border">
+              <iframe
+                title="Brandwein & Brandwein office location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2960.0!2d-87.83!3d42.13!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fc5e0!2s1707+Shermer+Rd+Northbrook+IL!5e0!3m2!1sen!2sus!4v1700000000000"
+                width="100%"
+                height="200"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
 
@@ -124,47 +139,27 @@ export function ContactSection() {
                   Thank You
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  We have received your inquiry and will be in touch within one
-                  business day.
+                  We have received your inquiry and will be in touch shortly.
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                  <div className="flex flex-col gap-1.5">
-                    <label
-                      htmlFor="firstName"
-                      className="text-xs font-medium tracking-wide text-foreground uppercase"
-                    >
-                      First Name
-                    </label>
-                    <input
-                      id="firstName"
-                      name="firstName"
-                      type="text"
-                      required
-                      value={formState.firstName}
-                      onChange={handleChange}
-                      className="rounded-sm border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-accent"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-1.5">
-                    <label
-                      htmlFor="lastName"
-                      className="text-xs font-medium tracking-wide text-foreground uppercase"
-                    >
-                      Last Name
-                    </label>
-                    <input
-                      id="lastName"
-                      name="lastName"
-                      type="text"
-                      required
-                      value={formState.lastName}
-                      onChange={handleChange}
-                      className="rounded-sm border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-accent"
-                    />
-                  </div>
+                <div className="flex flex-col gap-1.5">
+                  <label
+                    htmlFor="name"
+                    className="text-xs font-medium tracking-wide text-foreground uppercase"
+                  >
+                    Name
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    value={formState.name}
+                    onChange={handleChange}
+                    className="rounded-sm border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-accent"
+                  />
                 </div>
 
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -190,7 +185,7 @@ export function ContactSection() {
                       htmlFor="phone"
                       className="text-xs font-medium tracking-wide text-foreground uppercase"
                     >
-                      Phone
+                      Phone Number
                     </label>
                     <input
                       id="phone"
@@ -205,40 +200,15 @@ export function ContactSection() {
 
                 <div className="flex flex-col gap-1.5">
                   <label
-                    htmlFor="service"
-                    className="text-xs font-medium tracking-wide text-foreground uppercase"
-                  >
-                    Service of Interest
-                  </label>
-                  <select
-                    id="service"
-                    name="service"
-                    value={formState.service}
-                    onChange={handleChange}
-                    className="rounded-sm border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-accent"
-                  >
-                    <option value="">Select a service...</option>
-                    <option value="estate-planning">Estate Planning</option>
-                    <option value="trusts">Trust Administration</option>
-                    <option value="probate">Probate & Estate Settlement</option>
-                    <option value="tax-planning">Tax Planning & CPA Services</option>
-                    <option value="asset-protection">Asset Protection</option>
-                    <option value="charitable">Charitable Giving</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div className="flex flex-col gap-1.5">
-                  <label
                     htmlFor="message"
                     className="text-xs font-medium tracking-wide text-foreground uppercase"
                   >
-                    Message
+                    Please Describe Your Issue
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    rows={4}
+                    rows={5}
                     value={formState.message}
                     onChange={handleChange}
                     className="resize-none rounded-sm border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-accent"

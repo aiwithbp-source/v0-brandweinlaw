@@ -3,15 +3,15 @@ import { Quote } from "lucide-react"
 const testimonials = [
   {
     quote:
-      "Hartwell & Prescott structured our family trust with extraordinary care. Their integrated approach to law and tax saved us significantly and gave us complete peace of mind.",
-    author: "Margaret L. Whitfield",
-    role: "Client since 2004",
+      "Brandwein & Brandwein structured our family estate plan with extraordinary care. Their combined legal and CPA expertise gave us complete confidence in our plan and significant tax savings.",
+    author: "Satisfied Client",
+    role: "Estate Planning Client",
   },
   {
     quote:
-      "When my husband passed, James and William handled the entire estate settlement with professionalism and genuine compassion. I cannot imagine going through that process without them.",
-    author: "Catherine R. Sterling",
-    role: "Client since 2011",
+      "Richard and Michael handled our business succession plan and estate with professionalism and genuine care. Their experience as both attorneys and a CPA is truly invaluable.",
+    author: "Satisfied Client",
+    role: "Business Succession Client",
   },
 ]
 
@@ -25,7 +25,7 @@ export function TrustBanner() {
             Client Testimonials
           </p>
           <h2 className="mb-4 font-serif text-3xl font-bold text-foreground md:text-4xl text-balance">
-            Trusted by Families Across New York
+            Trusted by Families & Businesses
           </h2>
           <div className="mx-auto mb-6 h-px w-16 bg-accent" />
         </div>
@@ -33,7 +33,7 @@ export function TrustBanner() {
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
           {testimonials.map((t) => (
             <blockquote
-              key={t.author}
+              key={t.role}
               className="rounded-sm border border-border bg-background p-8"
             >
               <Quote className="mb-4 h-6 w-6 text-accent/40" />
@@ -60,13 +60,11 @@ export function TrustBanner() {
             Professional Affiliations
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-sm text-muted-foreground">
-            <span>American College of Trust & Estate Counsel</span>
+            <span>American Bar Association</span>
             <span className="hidden text-border md:inline">|</span>
-            <span>New York State Bar Association</span>
+            <span>Chicago Bar Association</span>
             <span className="hidden text-border md:inline">|</span>
-            <span>AICPA</span>
-            <span className="hidden text-border md:inline">|</span>
-            <span>National Academy of Elder Law Attorneys</span>
+            <span>U.S. Tax Court</span>
           </div>
         </div>
       </div>

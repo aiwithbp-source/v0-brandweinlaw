@@ -1,41 +1,35 @@
-import { FileText, Shield, Building2, Calculator, Scale, BookOpen } from "lucide-react"
+import { FileText, Shield, Calculator, Building2, Briefcase } from "lucide-react"
 
 const practices = [
   {
     icon: FileText,
     title: "Estate Planning",
     description:
-      "Comprehensive estate plans including wills, powers of attorney, and healthcare directives tailored to your unique situation and goals.",
+      "Comprehensive estate plans including wills, powers of attorney, healthcare directives, and succession planning tailored to protect your family and your legacy.",
   },
   {
     icon: Shield,
-    title: "Trust Administration",
+    title: "Estate Administration",
     description:
-      "Expert trust creation and administration including revocable living trusts, irrevocable trusts, and special needs trusts.",
-  },
-  {
-    icon: Building2,
-    title: "Probate & Estate Settlement",
-    description:
-      "Guiding families through the probate process with efficiency and compassion, minimizing delays and disputes.",
+      "Guiding families through probate and estate settlement with efficiency and compassion, including trust administration and fiduciary accounting.",
   },
   {
     icon: Calculator,
-    title: "Tax Planning & CPA Services",
+    title: "Tax Law",
     description:
-      "Strategic tax planning integrated with estate strategies. Full CPA services including estate tax returns, gift tax filings, and fiduciary accounting.",
+      "Strategic tax planning integrated with estate strategies. IRS controversy resolution, estate tax returns, gift tax filings, and full CPA services from a former IRS Revenue Agent.",
   },
   {
-    icon: Scale,
-    title: "Asset Protection",
+    icon: Building2,
+    title: "Real Estate",
     description:
-      "Structuring your assets to shield them from creditors, lawsuits, and future uncertainties while preserving family wealth.",
+      "Commercial and residential real estate transactions, including purchase and sale agreements, title review, closings, and real estate investment structuring.",
   },
   {
-    icon: BookOpen,
-    title: "Charitable Giving",
+    icon: Briefcase,
+    title: "Corporate Law",
     description:
-      "Designing charitable trusts, foundations, and donor-advised funds that maximize your philanthropic impact and tax benefits.",
+      "Business formation, succession planning for business owners, commercial transactions, partnership agreements, and corporate governance matters.",
   },
 ]
 
@@ -54,7 +48,7 @@ export function PracticeAreas() {
           <div className="mx-auto mb-6 h-px w-16 bg-accent" />
           <p className="text-base leading-relaxed text-muted-foreground text-pretty">
             With deep knowledge spanning law and accounting, we deliver integrated
-            solutions that protect your estate from every angle.
+            solutions that protect your estate, your business, and your family.
           </p>
         </div>
 

@@ -17,9 +17,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Hartwell & Prescott | Estate Planning, Trusts & CPA Services',
+  title: 'Brandwein & Brandwein | Attorneys at Law - Estate Planning, Tax Law & CPA',
   description:
-    'Hartwell & Prescott is a prestigious law firm specializing in estate planning, trusts, wills, probate, and CPA services. Trusted counsel for generations.',
+    'Brandwein & Brandwein, Attorneys at Law, located in Northbrook, IL. Specializing in estate planning, estate administration, tax law, real estate, and corporate law. Certified Public Accountants. Call (847) 509-9200.',
 }
 
 export const viewport = {

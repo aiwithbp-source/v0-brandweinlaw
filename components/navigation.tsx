@@ -22,10 +22,12 @@ export function Navigation() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
           <div className="flex items-center gap-2 text-sm text-primary-foreground/70">
             <Phone className="h-3.5 w-3.5" />
-            <span>(212) 555-0140</span>
+            <a href="tel:8475099200" className="hover:text-accent transition-colors">
+              (847) 509-9200
+            </a>
           </div>
           <span className="hidden text-sm text-primary-foreground/70 sm:block">
-            Trusted Counsel for Generations
+            Northbrook, Illinois
           </span>
         </div>
       </div>
@@ -34,10 +36,10 @@ export function Navigation() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link href="#home" className="flex flex-col">
           <span className="font-serif text-xl font-bold tracking-wide text-primary-foreground lg:text-2xl">
-            Hartwell & Prescott
+            Brandwein & Brandwein
           </span>
           <span className="text-xs tracking-[0.25em] text-accent uppercase">
-            Attorneys at Law & CPA
+            Attorneys at Law
           </span>
         </Link>
 
@@ -59,7 +61,7 @@ export function Navigation() {
           href="#contact"
           className="hidden rounded-sm bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90 lg:block"
         >
-          Schedule Consultation
+          Contact Us Today
         </Link>
 
         {/* Mobile toggle */}
@@ -94,7 +96,7 @@ export function Navigation() {
                 className="block rounded-sm bg-accent px-5 py-2.5 text-center text-sm font-semibold text-accent-foreground"
                 onClick={() => setMobileOpen(false)}
               >
-                Schedule Consultation
+                Contact Us Today
               </Link>
             </li>
           </ul>
