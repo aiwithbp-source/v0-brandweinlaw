@@ -1,20 +1,27 @@
-import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Scale, BookOpen, Landmark } from "lucide-react"
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-screen">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/hero-law.jpg"
-          alt="Distinguished law firm office with mahogany bookshelves and leather-bound volumes"
-          fill
-          className="object-cover"
-          priority
+    <section id="home" className="relative min-h-screen overflow-hidden">
+      {/* Styled background with subtle icons */}
+      <div className="absolute inset-0 bg-primary">
+        {/* Decorative watermark icons */}
+        <Scale
+          className="absolute -top-10 -right-10 h-96 w-96 text-primary-foreground/[0.03] rotate-12"
+          strokeWidth={0.5}
+          aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-primary/80" />
+        <BookOpen
+          className="absolute bottom-20 -left-16 h-80 w-80 text-primary-foreground/[0.03] -rotate-12"
+          strokeWidth={0.5}
+          aria-hidden="true"
+        />
+        <Landmark
+          className="absolute top-1/3 left-1/2 h-64 w-64 -translate-x-1/2 text-primary-foreground/[0.02]"
+          strokeWidth={0.5}
+          aria-hidden="true"
+        />
       </div>
 
       {/* Content */}
